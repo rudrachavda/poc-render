@@ -20,7 +20,18 @@ JsonParser --> chartvar --> sidebar --> render sidebar
 
 
 
+skeleton {
+    Sidebar {
+        4 Buttons{
 
+        }
+    }
+
+    Graph {
+        - rendered differently based on the button click
+    }
+
+}
 
 
 

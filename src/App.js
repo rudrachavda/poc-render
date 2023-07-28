@@ -1,11 +1,10 @@
 import React from 'react';
-import JsonParser from './parse'
+import Sidebar from './sidebar';
 
 function App() {
   return (
-    <div className="mb-3">
-        {/* <Component Name/> */}
-        <JsonParser/>
+    <div>
+      <Sidebar/>
     </div>
   );
 }

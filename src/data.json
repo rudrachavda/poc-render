@@ -1,202 +1,146 @@
 [
     {
-        "sale": "S001",
-        "store": "ST0001",
-        "customer": "C00001",
-        "product": "P00001",
-        "value": 100.00,
-        "date": "1 Jul"
+        "store": "ST01",
+        "sale": "S01",
+        "customer": "C01",
+        "product": "P01",
+        "value": 130,
+        "date": "Jul 27"
     },
     {
-        "sale": "S002",
-        "store": "ST0002",
-        "customer": "C00002",
-        "product": "P00002",
-        "value": 150.50,
-        "date": "2 Jul"
+        "store": "ST01",
+        "sale": "S02",
+        "customer": "C02",
+        "product": "P02",
+        "value": 140,
+        "date": "Jul 28"
     },
     {
-        "sale": "S003",
-        "store": "ST0003",
-        "customer": "C00003",
-        "product": "P00003",
-        "value": 75.25,
-        "date": "3 Jul"
+        "store": "ST01",
+        "sale": "S03",
+        "customer": "C03",
+        "product": "P03",
+        "value": 150,
+        "date": "Jul 29"
     },
     {
-        "sale": "S004",
-        "store": "ST0004",
-        "customer": "C00004",
-        "product": "P00004",
-        "value": 200.00,
-        "date": "4 Jul"
+        "store": "ST01",
+        "sale": "S01",
+        "customer": "C06",
+        "product": "P01",
+        "value": 130,
+        "date": "Aug 3"
     },
     {
-        "sale": "S005",
-        "store": "ST0005",
-        "customer": "C00005",
-        "product": "P00005",
-        "value": 50.00,
-        "date": "5 Jul"
+        "store": "ST01",
+        "sale": "S02",
+        "customer": "C07",
+        "product": "P02",
+        "value": 140,
+        "date": "Jul 27"
     },
     {
-        "sale": "S006",
-        "store": "ST0001",
-        "customer": "C00006",
-        "product": "P00006",
-        "value": 120.75,
-        "date": "6 Jul"
+        "store": "ST01",
+        "sale": "S03",
+        "customer": "C08",
+        "product": "P03",
+        "value": 150,
+        "date": "Jul 28"
     },
     {
-        "sale": "S007",
-        "store": "ST0002",
-        "customer": "C00007",
-        "product": "P00007",
-        "value": 95.80,
-        "date": "7 Jul"
+        "store": "ST02",
+        "sale": "S01",
+        "customer": "C04",
+        "product": "P01",
+        "value": 130,
+        "date": "Jul 30"
     },
     {
-        "sale": "S008",
-        "store": "ST0003",
-        "customer": "C00008",
-        "product": "P00008",
-        "value": 180.00,
-        "date": "8 Jul"
+        "store": "ST02",
+        "sale": "S02",
+        "customer": "C05",
+        "product": "P02",
+        "value": 140,
+        "date": "Jul 31"
     },
     {
-        "sale": "S009",
-        "store": "ST0004",
-        "customer": "C00009",
-        "product": "P00009",
-        "value": 60.50,
-        "date": "9 Jul"
+        "store": "ST02",
+        "sale": "S03",
+        "customer": "C06",
+        "product": "P03",
+        "value": 150,
+        "date": "Aug 1"
     },
     {
-        "sale": "S010",
-        "store": "ST0005",
-        "customer": "C00010",
-        "product": "P00010",
-        "value": 250.00,
-        "date": "10 Jul"
+        "store": "ST03",
+        "sale": "S01",
+        "customer": "C07",
+        "product": "P01",
+        "value": 130,
+        "date": "Aug 2"
     },
     {
-        "sale": "S011",
-        "store": "ST0001",
-        "customer": "C00011",
-        "product": "P00011",
-        "value": 130.25,
-        "date": "11 Jul"
+        "store": "ST03",
+        "sale": "S02",
+        "customer": "C08",
+        "product": "P02",
+        "value": 140,
+        "date": "Aug 3"
     },
     {
-        "sale": "S012",
-        "store": "ST0002",
-        "customer": "C00012",
-        "product": "P00012",
-        "value": 80.00,
-        "date": "12 Jul"
+        "store": "ST03",
+        "sale": "S03",
+        "customer": "C09",
+        "product": "P03",
+        "value": 150,
+        "date": "Jul 27"
     },
     {
-        "sale": "S013",
-        "store": "ST0003",
-        "customer": "C00013",
-        "product": "P00013",
-        "value": 220.50,
-        "date": "13 Jul"
+        "store": "ST04",
+        "sale": "S01",
+        "customer": "C10",
+        "product": "P01",
+        "value": 130,
+        "date": "Jul 28"
     },
     {
-        "sale": "S014",
-        "store": "ST0004",
-        "customer": "C00014",
-        "product": "P00014",
-        "value": 70.25,
-        "date": "14 Jul"
+        "store": "ST04",
+        "sale": "S02",
+        "customer": "C01",
+        "product": "P02",
+        "value": 140,
+        "date": "Jul 29"
     },
     {
-        "sale": "S015",
-        "store": "ST0005",
-        "customer": "C00015",
-        "product": "P00015",
-        "value": 180.00,
-        "date": "15 Jul"
+        "store": "ST04",
+        "sale": "S03",
+        "customer": "C02",
+        "product": "P03",
+        "value": 150,
+        "date": "Jul 30"
     },
     {
-        "sale": "S016",
-        "store": "ST0001",
-        "customer": "C00016",
-        "product": "P00016",
-        "value": 90.00,
-        "date": "16 Jul"
+        "store": "ST05",
+        "sale": "S01",
+        "customer": "C03",
+        "product": "P01",
+        "value": 130,
+        "date": "Jul 31"
     },
     {
-        "sale": "S017",
-        "store": "ST0002",
-        "customer": "C00017",
-        "product": "P00017",
-        "value": 190.50,
-        "date": "17 Jul"
+        "store": "ST05",
+        "sale": "S02",
+        "customer": "C04",
+        "product": "P02",
+        "value": 140,
+        "date": "Aug 1"
     },
     {
-        "sale": "S018",
-        "store": "ST0003",
-        "customer": "C00018",
-        "product": "P00018",
-        "value": 55.25,
-        "date": "18 Jul"
-    },
-    {
-        "sale": "S019",
-        "store": "ST0004",
-        "customer": "C00019",
-        "product": "P00019",
-        "value": 210.00,
-        "date": "19 Jul"
-    },
-    {
-        "sale": "S020",
-        "store": "ST0005",
-        "customer": "C00020",
-        "product": "P00020",
-        "value": 120.25,
-        "date": "20 Jul"
-    },
-    {
-        "sale": "S021",
-        "store": "ST0001",
-        "customer": "C00021",
-        "product": "P00021",
-        "value": 70.00,
-        "date": "21 Jul"
-    },
-    {
-        "sale": "S022",
-        "store": "ST0002",
-        "customer": "C00022",
-        "product": "P00022",
-        "value": 160.50,
-        "date": "22 Jul"
-    },
-    {
-        "sale": "S023",
-        "store": "ST0003",
-        "customer": "C00023",
-        "product": "P00023",
-        "value": 45.25,
-        "date": "23 Jul"
-    },
-    {
-        "sale": "S024",
-        "store": "ST0004",
-        "customer": "C00024",
-        "product": "P00024",
-        "value": 180.00,
-        "date": "24 Jul"
-    },
-    {
-        "sale": "S025",
-        "store": "ST0005",
-        "customer": "C00025",
-        "product": "P00025",
-        "value": 140.25,
-        "date": "25 Jul"
+        "store": "ST05",
+        "sale": "S03",
+        "customer": "C05",
+        "product": "P03",
+        "value": 150,
+        "date": "Aug 2"
     }
 ]
