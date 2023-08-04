@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ChartContainer from './chartcontainer.js';
 import data from './data.json'
+
 function Sidebar() {
     const [activeButton, setActiveButton] = useState(null);
 
@@ -17,7 +18,7 @@ function Sidebar() {
                     }-700 border-none cursor-pointer rounded-md`}
                 onClick={() => handleClick(1)}
             >
-            {/* Name */}    Date VS Value
+            {/* Name */}    One Dimension
             
             </button>
 
@@ -26,7 +27,7 @@ function Sidebar() {
                     }-700 border-none cursor-pointer rounded-md`}
                 onClick={() => handleClick(2)}
             >
-            {/* Name */}    Store VS Value
+            {/* Name */}    Two Dimension
             
             </button>
 
@@ -35,7 +36,7 @@ function Sidebar() {
                     }-700 border-none cursor-pointer rounded-md`}
                 onClick={() => handleClick(3)}
             >
-            {/* Name */}    Heatmap on Store
+            {/* Name */}    Three Dimension
             
             </button>
 
@@ -44,7 +45,7 @@ function Sidebar() {
                     }-700 border-none cursor-pointer rounded-md`}
                 onClick={() => handleClick(4)}
             >
-            {/* Name */}    Heatmap on Store orders
+            {/* Name */}    Four Dimension 
             
             </button>
             
