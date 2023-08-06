@@ -2,105 +2,129 @@ import React from 'react';
 import ReactECharts from 'echarts-for-react';
 
 const Charts2 = ({ data }) => {
-    // Create an object to store the customer values
-    const customerData = {};
-
-    // Loop through the data array and aggregate the values for each customer
+    // Aggregate values for each date
+    const aggregatedData = {};
     data.forEach((entry) => {
-        const { customer, value } = entry;
-        if (customerData[customer]) {
-            customerData[customer] += value;
+        const { date, value } = entry;
+        if (aggregatedData[date]) {
+            aggregatedData[date] += value;
         } else {
-            customerData[customer] = value;
+            aggregatedData[date] = value;
         }
     });
 
-    // Convert the aggregated customer data into the required format for the pie chart
-    const pieChartData = Object.entries(customerData).map(([name, value]) => ({ name, value }));
+    // Convert the aggregated data into an array of arrays with X and Y values
+    const scatterPlotData = Object.entries(aggregatedData).map(([date, value]) => [date, value]);
+    console.log('SPD', scatterPlotData); // Console log for scatter plot data
 
-    console.log('pieChartData:',pieChartData);
-    const option1 = {
+    // Aggregate values for each store and date
+    const aggregatedStoreData = {};
+    data.forEach((entry) => {
+        const { store, date, value } = entry;
+        if (!aggregatedStoreData[store]) {
+            aggregatedStoreData[store] = {};
+        }
+        if (aggregatedStoreData[store][date]) {
+            aggregatedStoreData[store][date] += value;
+        } else {
+            aggregatedStoreData[store][date] = value;
+        }
+    });
+
+    // Convert the aggregated store data into the required format for the stacked line chart
+    const stackedLineChartSeries = Object.keys(aggregatedStoreData).map((store) => ({
+        name: store,
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+            focus: 'series',
+        },
+        data: Object.values(aggregatedStoreData[store]),
+    }));
+    console.log('SLCS', stackedLineChartSeries); // Console log for stacked line chart series
+
+    const scatterPlotOption = {
         title: {
-            text: 'Customer Sales',
-            subtext: 'Data on Consumer',
-            left: 'center',
+            text: 'Sales by Date (Scatterplot)',
+        },
+        xAxis: {
+            type: 'category', // Use category axis for X-axis with string values
+            data: Object.keys(aggregatedData), // Set X-axis data to the array of dates
+        },
+        yAxis: {
+            type: 'value', // Use value axis for Y-axis
+        },
+        series: [
+            {
+                symbolSize: 20,
+                data: scatterPlotData,
+                type: 'scatter',
+            },
+        ],
+    };
+
+    const stackedLineChartOption = {
+        title: {
+            text: 'Stacked Area Chart',
         },
         tooltip: {
-            trigger: 'item',
-        },
-        legend: {
-            orient: 'vertical',
-            left: 'left',
-        },
-        series: [
-            {
-                name: 'Sales',
-                type: 'pie',
-                radius: '50%',
-                data: pieChartData, // Use the modified data for the pie chart
-                emphasis: {
-                    itemStyle: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)',
-                    },
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985',
                 },
             },
-        ],
-    };
-
-    const option2 = {
-        title: {
-            text: 'Store View',
         },
-        xAxis: {
-            type: 'category',
-            data: data.map((entry) => entry.date),
+        legend: {
+            data: Object.keys(aggregatedStoreData),
         },
-        yAxis: {
-            type: 'value',
+        toolbox: {
+            feature: {
+                saveAsImage: {},
+            },
         },
-        series: [
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true,
+        },
+        xAxis: [
             {
-                data: data.map((entry) => entry.value * 2), // Just an example, you can adjust the data as per your requirements
-                type: 'line',
+                type: 'category',
+                boundaryGap: false,
+                data: Object.keys(aggregatedStoreData[Object.keys(aggregatedStoreData)[0]]), // Assuming all stores have the same dates
             },
         ],
-    };
-
-    const option3 = {
-        title: {
-            text: 'Product/Sales View',
-        },
-        xAxis: {
-            type: 'category',
-            data: data.map((entry) => entry.date),
-        },
-        yAxis: {
-            type: 'value',
-        },
-        series: [
+        yAxis: [
             {
-                data: data.map((entry) => entry.value / 2), // Just an example, you can adjust the data as per your requirements
-                type: 'bar',
+                type: 'value',
             },
         ],
+        series: stackedLineChartSeries,
+    };
+
+    const [showScatterPlot, setShowScatterPlot] = React.useState(true);
+
+    const handleToggleChart = () => {
+        setShowScatterPlot((prevShowScatterPlot) => !prevShowScatterPlot);
     };
 
     return (
-        
-        <div>
-            <div>
-            <ReactECharts option={option1} style={{ position: 'fixed', bottom: '270px', left: '210px', width: '600px', height: '400px' }} />
+        <div style={{ position: 'fixed', top: '20px', left: '380px', width: '1000px', height: '800px' }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ marginRight: '10px' }}>Chart Type:</h3>
+                <button onClick={handleToggleChart}>
+                    {showScatterPlot ? 'Show Stacked Line Chart' : 'Show Scatterplot'}
+                </button>
             </div>
-            
-            <div>
-            <ReactECharts option={option2} style={{ position: 'fixed', top: '20px', left: '830px', width: '600px', height: '400px' }} />
-            </div>
-
-            <div>
-            <ReactECharts option={option3} style={{ position: 'fixed', top: '420px', left: '210px', width: '600px', height: '400px' }} />
-            </div>
+            {showScatterPlot ? (
+                <ReactECharts option={scatterPlotOption} style={{ width: '100%', height: '400px' }} />
+            ) : (
+                <ReactECharts option={stackedLineChartOption} style={{ width: '100%', height: '400px' }} />
+            )}
         </div>
     );
 };
