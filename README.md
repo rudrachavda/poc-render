@@ -1,7 +1,13 @@
 
 # poc-render
 
-Reqs
+Notes:
+- Create some new components, add the attribute adder from before in poc-csv-render, add more dimensions however, and with the more dimensions you add, the more complex the graphs get, with the final graph being the dot graph with everything connected. 
+
+The graphs should show automatically from the attributes
+
+
+Requirements:
 
 So what I understand:
 
